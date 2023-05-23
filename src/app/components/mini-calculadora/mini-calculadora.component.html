@@ -1,0 +1,52 @@
+<!-- <p>mini-calculadora works!</p>
+<form>
+    Numero 1: <input type="number" [(ngModel)]="num1" name="num1"/><br/><br>
+    Numero 2: <input type="number" [(ngModel)]="num2" name="num2"/><br/><br>
+    <button type="submit" (click)="sumar()">Sumar</button>
+    <button type="submit" (click)="restar()">Restar</button>
+    <button type="submit" (click)="multiplicar()">Multiplicar</button>
+    <button type="submit" (click)="dividir()">Dividir</button>
+</form>
+
+<p>Resultado: {{result}}</p>
+<p>Historial</p>
+<ul>
+ <li *ngFor="let result of resultados">
+   <p>Num: {{result}}</p>
+ </li>
+</ul> -->
+
+<div class="container">
+  <h1 class="title">Mini-Calculadora works!!</h1>
+  <form>
+    <div class="input-container">
+      <label for="num1">Numero 1:</label>
+      <input type="number" [(ngModel)]="num1" name="num1" id="num1" />
+    </div>
+    <div class="input-container">
+      <label for="num2">Numero 2:</label>
+      <input type="number" [(ngModel)]="num2" name="num2" id="num2" />
+    </div>
+    <div class="button-container">
+      <button type="submit" (click)="sumar()">Sumar</button>
+      <button type="submit" (click)="restar()">Restar</button>
+      <button type="submit" (click)="multiplicar()">Multiplicar</button>
+      <button type="submit" (click)="dividir()">Dividir</button>
+    </div>
+  </form>
+
+  <p>Resultado: {{ result }}</p>
+  <p>Historial de resultados</p>
+  <div>
+    <button type="submit" (click)="mostrarHistorial(true)">Mostrar</button>
+    <button type="submit" (click)="mostrarHistorial(false)">Ocultar</button>
+  </div>
+  
+  <ul class="historial" *ngIf="historial">
+    <li class="result-item" *ngFor="let result of resultados">
+      <p>Num: {{ result }}</p>
+    </li>
+  </ul>
+</div>
+
+
